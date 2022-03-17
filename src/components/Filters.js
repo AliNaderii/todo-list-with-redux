@@ -15,7 +15,7 @@ export default function Filters() {
 
   const todos = useSelector(state => state.todos);
 
-  const unfinishedTodos = todos.reduce(
+  const unfinishedTodos = Object.keys(todos).reduce(
     (acc, todo) => !todo.completed ? acc + 1 : acc, 0
   );
 
@@ -35,7 +35,6 @@ export default function Filters() {
   };
 
   const handleClear = () => {
-    console.log('hell');
     dispatch(clearCompleted());
   };
 

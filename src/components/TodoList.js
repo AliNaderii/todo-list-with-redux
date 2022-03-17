@@ -14,13 +14,13 @@ export default function TodoList() {
     state => state.filters.status,
     (todos, status) => {
       if (status === 'all') {
-        return todos;
+        return Object.values(todos);
       }
       else if (status === 'active') {
-        return todos.filter(todo => !todo.completed);
+        return Object.values(todos).filter(todo => !todo.completed);
       }
       else if (status === 'completed') {
-        return todos.filter(todo => todo.completed);
+        return Object.values(todos).filter(todo => todo.completed);
       }
     }
   );
@@ -28,7 +28,7 @@ export default function TodoList() {
 
   return (
     <StyledTodoList>
-      { todos && todos.map(todo => (
+      { todos.map(todo => (
         <TodoListItem todo={ todo } key={ todo.id } />
       )) }
       <Filters />
