@@ -1,6 +1,6 @@
 # Todo || NotTodo
 
-Something that exists on almost every single github respository ... A todo list :)
+Something that exists on almost every single one of github respositories ... A todo list :)
 
 ## Features
 - View the optimal layout for the app depending on their device's screen size
